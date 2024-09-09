@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
                 string dest = textBox2.Text;
 
 
-              
+
 
                 if (File.Exists(start))
                 {
@@ -84,7 +84,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            File.Delete(textBox3.Text);
         }
     }
 }

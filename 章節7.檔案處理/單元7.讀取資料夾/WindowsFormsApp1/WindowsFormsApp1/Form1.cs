@@ -32,18 +32,12 @@ namespace WindowsFormsApp1
         {
             if (Directory.Exists(directoryPath))
             {
-                // 获取目录中的所有文件
                 List<string> files = Directory.GetFiles(directoryPath).ToList();
-
-
 
                 foreach (string item in files)
                 {
                     textBox1.Text += item + "\r\n";
                 }
-
-
-
             }
             else
             {
@@ -56,18 +50,54 @@ namespace WindowsFormsApp1
         {
             if (Directory.Exists(directoryPath))
             {
-                // 获取目录中的所有文件
                 List<string> directories = Directory.GetDirectories(directoryPath).ToList();
-
-
 
                 foreach (string path in directories)
                 {
                     textBox1.Text += path + "\r\n";
                 }
+            }
+            else
+            {
+                MessageBox.Show("資料夾不存在");
+            }
 
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (Directory.Exists(directoryPath))
+            {
+                List<string> files = Directory.GetFiles(directoryPath).ToList();
 
+                foreach (string item in files)
+                {
+                    if (item.Contains("具"))
+                    {
+                        textBox1.Text += item + "\r\n";
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("資料夾不存在");
+            }
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (Directory.Exists(directoryPath))
+            {
+                List<string> directories = Directory.GetDirectories(directoryPath).ToList();
+
+                foreach (string path in directories)
+                {
+                    if (path.Contains("123"))
+                    { 
+                        textBox1.Text += path + "\r\n";
+                    }
+                }
             }
             else
             {
